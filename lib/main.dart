@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:news_application/composants/ButtonMenu.dart';
+import 'package:news_application/composants/CaseInfo.dart';
 
 void main() {
   return runApp(
@@ -72,61 +73,10 @@ class _NewsState extends State<News> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35),
-            child: Container(
-              width: double.infinity,
-              height: 270,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                color: HexColor("#d3d3d3"),
-              ),
-              child: GridView(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisExtent: 120,
-                ),
-                children: [
-                  Container(
-                    // color: Colors.yellow,
-                    padding: EdgeInsets.fromLTRB(55, 20, 55, 0),
-                    child: SizedBox(
-                      width: 80,
-                      height: 80,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // color: Colors.red,
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: Center(
-                      child: Text(
-                        "BlueTooth headphones Will Neer Give you the Best sound quality",
-                        style: GoogleFonts.montserrat(fontSize: 15),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // color: Colors.purple,
-                    padding: EdgeInsets.only(left: 25),
-                    child: Align(
-                      alignment: FractionalOffset.bottomLeft,
-                      child: Text(
-                        "Lifehacker.com",
-                        style: GoogleFonts.montserrat(fontSize: 15),
-                      ),
-                    ),
-                  ),
-                ],
-                shrinkWrap: true,
-              ),
-            ),
-          )
+          CaseInfo(
+            "BlueTooth headphones Will Neer Give you the Best sound quality",
+            "Lifehacker.com",
+          ),
         ],
       ),
     );
