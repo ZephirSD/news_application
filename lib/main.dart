@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:news_application/composants/ButtonMenu.dart';
 
 void main() {
   return runApp(
@@ -34,7 +35,7 @@ class _NewsState extends State<News> {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 35),
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 35),
             child: TextField(
               controller: _controller,
               decoration: InputDecoration(
@@ -62,12 +63,14 @@ class _NewsState extends State<News> {
             ),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                ),
-              )
+              ButtonMenu("Météo", HexColor("#d3d3d3"), Colors.black),
+              ButtonMenu("Technologie", HexColor("#EF7676"), Colors.white),
+              ButtonMenu("Santé", HexColor("#d3d3d3"), Colors.black),
+              ButtonMenu("Faits divers", HexColor("#d3d3d3"), Colors.black),
             ],
           )
         ],
