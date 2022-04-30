@@ -30,6 +30,7 @@ class _NewsState extends State<News> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30, vertical: 35),

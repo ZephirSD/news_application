@@ -9,50 +9,45 @@ class CaseInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 35),
-      child: Container(
-        width: double.infinity,
-        height: 270,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25),
-          color: HexColor("#d3d3d3"),
-        ),
-        child: GridView(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisExtent: 120,
-          ),
+    return Card(
+      color: HexColor("#d3d3d3"),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      margin: EdgeInsets.symmetric(horizontal: 40),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.max,
           children: [
-            Container(
-              // color: Colors.yellow,
-              padding: EdgeInsets.fromLTRB(55, 20, 55, 0),
-              child: SizedBox(
-                width: 80,
-                height: 80,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 100,
+                  height: 100,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                   ),
                 ),
-              ),
+                Container(
+                  width: 150,
+                  child: Text(
+                    titre,
+                    style: GoogleFonts.montserrat(fontSize: 15),
+                  ),
+                )
+              ],
             ),
             Container(
-              // color: Colors.red,
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Center(
-                child: Text(
-                  titre,
-                  style: GoogleFonts.montserrat(fontSize: 15),
-                ),
-              ),
-            ),
-            Container(
-              // color: Colors.purple,
-              padding: EdgeInsets.only(left: 25),
-              child: Align(
-                alignment: FractionalOffset.bottomLeft,
+              // color: Colors.amber,
+              margin: EdgeInsets.only(top: 25),
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(15, 25, 0, 25),
                 child: Text(
                   source,
                   style: GoogleFonts.montserrat(fontSize: 15),
@@ -60,7 +55,6 @@ class CaseInfo extends StatelessWidget {
               ),
             ),
           ],
-          shrinkWrap: true,
         ),
       ),
     );
